@@ -1,2 +1,2 @@
-# aml-components
-Azure Machine Learning reusable custom components market place
+# aml-modules
+Azure Machine Learning reusable custom module market place
