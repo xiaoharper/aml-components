@@ -1,0 +1,38 @@
+#  This is an auto generated module spec yaml file.
+#  For more details, please refer to https://aka.ms/azureml-module-specs
+amlModuleIdentifier:
+  moduleName: slice video
+  moduleVersion: 0.0.1
+description: slice input video into images and audio
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependenciesFile: conda.yaml
+    args:
+    - [--input_video, inputPath: Input video]
+    - --output_audio
+    - outputPath: Output audio
+    - --output_images
+    - outputPath: Output images
+    command:
+    - python
+    - slice-video.py
+inputs:
+- name: Input video
+  type: AnyDirectory
+  argumentName: input_video
+  description: input directory of video file
+  optional: true
+metadata:
+  annotations:
+    codegenBy: dsl.module
+outputs:
+- name: Output audio
+  type: AnyDirectory
+  argumentName: output_audio
+  description: output directory of audio from video
+- name: Output images
+  type: AnyDirectory
+  argumentName: output_images
+  description: output directory of images slice from video
