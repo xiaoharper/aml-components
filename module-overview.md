@@ -6,41 +6,47 @@ A pipeline is a description of a machine learning (ML) workflow, including all o
 
 A module is an implementation of a pipeline task. A module represents a step in the workflow. Each module takes one or more inputs and may produce one or more outputs. A module consists of an interface (inputs/outputs), the implementation (source code, command-line arguments and environment to run the module ) and metadata (name, description).
 
-A module specification in YAML format describes it's definition.
+Azure machine learning modules can be reused across multiple projects and AML workspace. This is achieved through module specification in YAML format, which describes all information(source code, environment, interface) needed to reproduce the module. A module is attached to a workspace through register with module YAML spec. After registeration, customer can consume the module in designer UI. 
 
-## Module development lifecycle
-Module development is an iterative process. It includes build module, test module, use module in pipeline to solve real business problem and share/reuse of a module. We have provide several CLI commands and SDK functions to boost the efficiency in module development lifecycle.
+
+
+## Module & pipeline development lifecycle
+Module & pipeline development is an iterative process. It includes build module, test module, build pipeline, test pipeline and share/reuse. We have provide several CLI commands and SDK functions to boost the efficiency in the development lifecycle.
 
 ![module-management-lifecycle](./modules/media/module-lifecycle.png)
 
-### Build a new module
+### Module development
 
 [video-how-to-build-new-module]()
 
 [sample-notebook]()
 
-**CLI commands**
 
-|Command|Purpose|
+|CLI Command|Purpose|
 | -----------| ----------- |
-|az ml module init| Initicialze a template dsl module project. The template contains commonly used files in module development, for example source code script, yaml spec, test file.|
-|az ml module build|Automatically build yaml spec from source code wrapped as dsl module. |
+|az ml module init| Initialize a template dsl module project. The template contains following useful files in module development process. <br /> - module_name.py: module source code template <br /> - module_name.spec.yaml: module spec in yaml format. Needed to register the module. <br /> - module_name_test.ipynb: template test notebook for the module <br /> - module_name_test.py: unit test template for the module  |
+|az ml module build|Automatically build yaml spec from source code that wrapped as dsl module. With this command, customer don't need to edit the yaml spec manually. |
 
 
 
 ### Debug module
 [video-how-to-debug-module]()
 
-**CLI commands**
-- az ml module debug
+|CLI Command|Purpose|
+| -----------| ----------- |
+|az ml module debug||
 
-**SDK function**
-- module.from_func()
-- module.from_yaml(
-- module.run()
+|SDK function|Purpose|
+| -----------| ----------- |
+|module.from_func|Load module from a function. Then you can run the module without register it to workspace.|
+|module.from_yaml|Load module from yaml spec. Then you can run the module without register it to workspace. |
+|module.run|Run module in your local Python environment or local docker container.|
 
 
-### Build pipeline with module
+
+
+
+### Build pipeline
 [video-how-to-build-pipeline-with-module]()
 
 dsl.pipeline()

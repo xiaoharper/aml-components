@@ -1,0 +1,39 @@
+#  This is an auto generated module spec yaml file.
+#  For more details, please refer to https://aka.ms/azureml-module-specs
+amlModuleIdentifier:
+  moduleName: gdal_sample
+  moduleVersion: 0.0.2
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependenciesFile: conda.yaml
+    args:
+    - --input_dir1
+    - inputPath: Input dir1
+    - --input_dir2
+    - inputPath: Input dir2
+    - --output_dir1
+    - outputPath: Output dir1
+    - --output_dir2
+    - outputPath: Output dir2
+    command:
+    - python
+    - gdal_sample.py
+inputs:
+- name: Input dir1
+  type: AnyDirectory
+  argumentName: input_dir1
+- name: Input dir2
+  type: AnyDirectory
+  argumentName: input_dir2
+metadata:
+  annotations:
+    codegenBy: dsl.module
+outputs:
+- name: Output dir1
+  type: AnyDirectory
+  argumentName: output_dir1
+- name: Output dir2
+  type: AnyDirectory
+  argumentName: output_dir2
