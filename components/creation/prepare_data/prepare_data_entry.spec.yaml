@@ -1,0 +1,49 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azureml-component-specs
+amlcomponentIdentifier:
+  componentName: Prepare data
+  componentVersion: 0.0.1
+description: A sample component which shows the input data.
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependenciesFile: conda.yaml
+    args:
+    - [--input_data, inputPath: Input data]
+    - [--str_param, inputValue: Str param]
+    - [--int_param, inputValue: Int param]
+    - [--enum_param, inputValue: Enum param]
+    - --output_data
+    - outputPath: Output data
+    command:
+    - python
+    - prepare_data_entry.py
+inputs:
+- name: Input data
+  type: AnyDirectory
+  argumentName: input_data
+  optional: true
+- name: Str param
+  type: String
+  argumentName: str_param
+  optional: true
+- name: Int param
+  type: Integer
+  argumentName: int_param
+  default: 0
+  optional: true
+- name: Enum param
+  type: Enum
+  argumentName: enum_param
+  options:
+  - val1
+  - val2
+  optional: true
+metadata:
+  annotations:
+    codegenBy: dsl.component
+outputs:
+- name: Output data
+  type: AnyDirectory
+  argumentName: output_data

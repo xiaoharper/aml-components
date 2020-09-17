@@ -1,0 +1,38 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azureml-component-specs
+amlcomponentIdentifier:
+  componentName: nyc taxi merge
+  componentVersion: 0.0.1
+description: merge two datasets
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependenciesFile: conda.yaml
+    args:
+    - --cleaned_yellow_data
+    - inputPath: Cleaned yellow data
+    - --cleaned_green_data
+    - inputPath: Cleaned green data
+    - --merged_output
+    - outputPath: Merged output
+    command:
+    - python
+    - merge.py
+inputs:
+- name: Cleaned yellow data
+  type: AnyDirectory
+  argumentName: cleaned_yellow_data
+  description: cleaned yellow data, needs to be read as pandas dataframe
+- name: Cleaned green data
+  type: AnyDirectory
+  argumentName: cleaned_green_data
+  description: cleaned green data, needs to be read as pandas dataframe
+metadata:
+  annotations:
+    codegenBy: dsl.component
+outputs:
+- name: Merged output
+  type: AnyDirectory
+  argumentName: merged_output
+  description: output data after merge
