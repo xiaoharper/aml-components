@@ -36,7 +36,7 @@ When you machine learning project get complicated, the complexity of manage it e
 
 It has more that 50 components for common machine learning tasks. Source code of all components can be find in the gallery. 
 
-Follow [this toturial]() (to-do) to learn how to consume a component from the gallery. 
+Follow [this toturial](./tutorial-use-existing-component-to-build-pipeline.ipynb) (to-do) to learn how to consume a component from the gallery. 
 
 
 ## Build your custom component
