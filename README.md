@@ -1,7 +1,7 @@
 # aml-components-quickstart
 
 Table of content
-1. [What is component?](./what-is-component.md)
+1. [Component and pipeline overview](./component-pipeline-overview.md)
 
 1. [Use existing component in AML component gallery](./tutorial-use-existing-component-to-build-pipeline.ipynb) (to-do)
 
