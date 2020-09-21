@@ -1,4 +1,4 @@
-# What is component?
+# Component and pipeline overview
 
 ## Concept
 

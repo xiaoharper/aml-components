@@ -1,3 +1,0 @@
-components:
--   entry: gdal_sample.py
-    sourceDirectory: .
