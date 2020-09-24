@@ -1,0 +1,15 @@
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.6.6
+- libgdal
+- gdal
+- rtree
+- pandas
+- pip:
+  - --extra-index-url=https://azuremlsdktestpypi.azureedge.net/CLI-SDK-Runners-Validation/19185956
+  - azureml-defaults==0.1.0.19185956
+  - azureml-pipeline-wrapper==0.1.0.19185956
+  - azureml-designer-core
+name: project_environment
