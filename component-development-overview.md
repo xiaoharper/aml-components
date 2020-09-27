@@ -8,9 +8,9 @@ A few terminology you will see:
 
 |Terminology|Description|
 | -----------| ----------- |
-|YAML spec| component specification in YAML format. It describes all information (interface, implementation, metadata) needed to reproduce a component. YAML spec is needed when register the component to an AML workspace. See example [here](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azureml-components/docs/component-spec-definition.md).|
-|dsl component|A component wrapped by dsl decorator. By using dsl decorator, it's easier to interact with the component. And some component development feature is build on top dsl component. See example [here](). |
-|dsl pipeline|A pipeline wrapped by dsl decorator. By using dsl pipeline, it's easier to interact with the pipeline. We recommend to use dsl pipeline to define your pipeline. See example [here](). |
+|YAML spec| Component specification in YAML format. ([example here](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azureml-components/docs/component-spec-definition.md)). It describes all information (interface, implementation, metadata) needed to reproduce a component. YAML spec is needed when register a component to an AML workspace. 
+|dsl component|A component wrapped by dsl decorator. Dsl decorator makes it easier to interact with the component. And some component development feature is build on top dsl component.|
+|dsl pipeline|A pipeline wrapped by dsl decorator. By using dsl pipeline, it's easier to interact with the pipeline. It's suggested to use dsl pipeline to define your pipeline.|
 
 
 
@@ -20,7 +20,7 @@ Component and pipeline development is an iterative process. It includes build co
 
 ![component-management-lifecycle](./components/media/component-lifecycle.png)
 
-### component development
+### Component development
 
 #### Feature overview
 
@@ -40,7 +40,7 @@ Component and pipeline development is an iterative process. It includes build co
 
 
 
-### component debug
+### Component debug
 
 
 #### Feature overview
@@ -52,6 +52,7 @@ Component and pipeline development is an iterative process. It includes build co
 | -----------| ----------- |
 |component.from_func|Load component from a python function. Then you can run the component in local to test.|
 |component.from_yaml|Load component from yaml spec. Then you can run the component in local to test. |
+|component.from_notebook|Load component from notebook function. Then you can run the component in local to test.|
 |component.run|Run component in your local Python environment or local docker container.|
 
 #### Video
@@ -69,7 +70,7 @@ Component and pipeline development is an iterative process. It includes build co
 
 #### Feature overview
 
-component SDK provide dsl pipeline wrapper to make it easier to build and interact with pipeline. 
+Component SDK provide dsl pipeline wrapper to make it easier to build and interact with pipeline. 
 
 #### Video 
 

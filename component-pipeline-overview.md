@@ -1,12 +1,6 @@
 # Azure Machine learning pipeline and component overview
 
-outline:
-1. what is AML pipeline?
-1. what is AML component?
-1. why need AML component?
-1. next steps
-    1. use existing components
-    1. build your own components
+
 
 ## What is Azure Machine Learning pipeline? 
 
@@ -43,11 +37,11 @@ With pipelines, you may choose to use different hardware for different tasks. Az
 ## What is Azure Machine Learning component? 
 A component is self-contained set of code that performs one step in the ML workflow (pipeline), such as data preprocessing, model training, model scoring and so on. A component is analogous to a function, in that it has a name, parameters, expects certain input and returns some value. 
  
-Data scientists or developers can wrap their arbitrary code as component by following the component specification .
+Data scientists or developers can wrap their arbitrary code as Azure Machine Learning component by following the component specification .
 
-#### Component specification
+### Component specification
 
-A component specification in YAML format describes the component for the Azure Machine Learning system. A component definition has the following parts:
+A component specification in YAML format describes the component in the Azure Machine Learning system. A component definition has the following parts:
 
 - **Metadata:** name, description, etc.
 - **Interface:**: input/output specifications (name, type, description, default value, etc).
@@ -57,14 +51,14 @@ Refer to [component spec definition](https://github.com/Azure/DesignerPrivatePre
 
 ### What's the benefit of component? 
 
-Currently Auzre Machine Learning offers Python SDK to build ML pipeline, and the basic building block of pipeline is PipelineStep. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component adds following benefits:
+Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component adds following benefits:
 
 
 -  **Reusable:** Component can be easily reused across different ML pipelines, different ML workspaces, even different organizations.  
-- **Reproducible:** By capturing all information in component spec, AML Component can be easily reproduced in different environment. 
+- **Reproducible:** By capturing all information in component specification, AML Component can be easily reproduced in different environment. 
 -  **Easy development & debug:** Rich SDK and CLI features to make development and debug component much easier. See [component development overview](./component-development-overview.md) to learn more.   
-- **Easy management:**  Rich features both in CLI and UI to manage your organization's components 
-- **Componentizable:** It hides the complicated logic, only exposes simple interface. So component consumer don't need to worry about implement details. They can easily use components build by others. In the meanwhile the ground truth (component spec) of a component is visible, making secondary development easy. 
+- **Easy management:**  Rich features both in CLI and UI to manage your components.  
+- **Componentizable:** This is the native benefit of component. It hides the complicated logic, and only exposes simple interface. So component consumer don't need to worry about implement. They can easily use components build by others. In the meanwhile the ground truth (component specification) of a component is visible, making secondary development easy. 
 
 [video-show-component-value-prop]() (to-do)
 
