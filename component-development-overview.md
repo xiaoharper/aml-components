@@ -70,7 +70,7 @@ Component and pipeline development is an iterative process. It includes build co
 
 - **Feature overview**
 
-Component SDK provide dsl pipeline wrapper to make it easier to build and interact with pipeline. 
+    Component SDK provide dsl pipeline wrapper to make it easier to build and interact with pipeline. 
 
 - **Video** 
 
@@ -93,8 +93,7 @@ Component SDK provide dsl pipeline wrapper to make it easier to build and intera
 
 |SDK function|Purpose|
 | -----------| ----------- |
-|pipeline.run|It's a light-weight orchestrator in local. In particularly it does following things under the hook: <br /> -  Download remote dataset to local <br /> - Pickup nodes which dependencies are ready, e.g. firstly with nodes that has no dependency node  <br /> - Send the picked nodes in a thread pool (size depends on number of processors on machine by default, user can specify this by max_workers parameter)  <br /> - Execute each node using component.run, which will be executing in separate container/process  <br /> - When node complete, will pickup next ready nodes in downstream to execute, until all nodes in the pipeline complete
-|
+|pipeline.run|It's a light-weight orchestrator in local. In particularly it does following things under the hook: <br /> -  Download remote dataset to local <br /> - Pickup nodes which dependencies are ready, e.g. firstly with nodes that has no dependency node  <br /> - Send the picked nodes in a thread pool (size depends on number of processors on machine by default, user can specify this by max_workers parameter)  <br /> - Execute each node using component.run, which will be executing in separate container/process  <br /> - When node complete, will pickup next ready nodes in downstream to execute, until all nodes in the pipeline complete|
 
 
 - **Video**
