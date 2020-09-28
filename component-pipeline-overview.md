@@ -54,11 +54,14 @@ Refer to [component spec definition](https://github.com/Azure/DesignerPrivatePre
 Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component adds following benefits:
 
 
--  **Reusable:** Component can be easily reused across different ML pipelines, different ML workspaces, even different organizations.  
-- **Reproducible:** By capturing all information in component specification, AML Component can be easily reproduced in different environment. 
--  **Easy development & debug:** Rich SDK and CLI features to make development and debug component much easier. See [component development overview](./component-development-overview.md) to learn more.   
-- **Easy management:**  Rich features both in CLI and UI to manage your components.  
-- **Componentizable:** This is the native benefit of component. It hides the complicated logic, and only exposes simple interface. So component consumer don't need to worry about implement. They can easily use components build by others. In the meanwhile the ground truth (component specification) of a component is visible, making secondary development easy. 
+-  **Greately simplified ML pipeline development experience**
+    - **Composability:** This is the native benefit of component. It hides the complicated logic, and only exposes simple interface. So component consumers don't need to worry about underlying implementation. They can easily use components built by themselves or by others. In the meanwhile the ground truth (component specification) of a component is visible, making secondary development easy. 
+    - **Reusability:** Component can be easily reused across different ML pipelines, different ML workspaces, even different organizations.
+    - **Easy development, testing & debug:** Rich SDK and CLI features to make component development, testing and debug much easier. See [component development overview](./component-development-overview.md) to learn more.
+    - **Easy pipeline authoring:** Once a component is registered in the workspace, it can be easily consumed in both Python Python SDK and drag-and-drop Designer UI.
+- **Reproducibility:** By capturing all information in component specification, AML Component can be easily reproduced in different environments. Components can be managed in versions so it's easy to trace back if a data scientist wants to reproduce a specific experiment result.
+- **Sharing & collaboration for all-skill data scientists:** Data scientists who prefer low-code/no-code can use Designer UI to quickly prototype and export the pipeline to Python code for code-first data scientists for further tuning or check in. The exported Python notebook can also be submitted to different workspaces for sharing & collaboration.
+
 
 [video-show-component-value-prop]() (to-do)
 
