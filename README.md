@@ -8,13 +8,15 @@ A component is self-contained set of code that performs one step in the ML workf
 
 Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component adds following benefits:
 
-- Reusable
-- Reproducible
-- Easy development & debug
-- Easy management
-- Componentizable
+- Composability
+- Reusability
+- Easy development, testing & debug
+- Easy pipeline authoring
+- Reproducibility
+- Sharing & collaboration
 
-Check [pipeline and component overview](./component-pipeline-overview.md) to learn more. 
+
+Check [pipeline and component overview](./component-pipeline-overview.md) to learn more in detail. 
 
 
 ## Quick start
@@ -22,8 +24,8 @@ Check [pipeline and component overview](./component-pipeline-overview.md) to lea
 1. [Use existing component to build a pipeline](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azureml-modules/samples/get-started.ipynb)
 
 1. Build your own component
-    - Read the [component development overview](./component-development-overview.md) to learn features for accelerating component development. 
-    - Follow the [tutorial to create your first component](tutorial-create-first-component.ipynb)  
+    - Read the [component development overview](./component-development-overview.md) to get an overview of features to accelerate component development. 
+    - Follow the [tutorial to create your first component](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/sdkpreview/azureml-modules/samples/create-module-from-existing-python-code.ipynb)
 
 
 ## Samples
