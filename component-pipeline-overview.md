@@ -4,7 +4,7 @@
 
 ## What is Azure Machine Learning pipeline? 
 
-Azure Machine Learning pipelines help you build, optimize, and manage machine learning workflows. These workflows have a number of benefits:
+An Azure Machine Learning pipeline is an independently executable workflow of a complete machine learning task. Azure Machine Learning pipelines help you build, optimize, and manage machine learning workflows with following benefits:
 
 - Simplicity
 - Speed
@@ -17,21 +17,6 @@ Azure Machine Learning pipelines help you build, optimize, and manage machine le
 
 These benefits become significant as soon as your machine learning project moves beyond pure exploration and into iteration. Even simple one-step pipelines can be valuable. Machine learning projects are often in a complex state, and it can be a relief to make the precise accomplishment of a single workflow a trivial process.
 
-### What can Azure Machine Learning pipeline do? 
-
-An Azure Machine Learning pipeline is an independently executable workflow of a complete machine learning task. Subtasks are encapsulated as a series of steps within the pipeline. An Azure Machine Learning pipeline can be as simple as one that calls a Python script, so may do just about anything. Pipelines should focus on machine learning tasks such as:
-
-- Data preparation including importing, validating and cleaning, munging and transformation, normalization, and staging
-- Training configuration including parameterizing arguments, filepaths, and logging / reporting configurations
-- Training and validating efficiently and repeatedly. Efficiency might come from specifying specific data subsets, different hardware compute resources, distributed processing, and progress monitoring
-- Deployment, including versioning, scaling, provisioning, and access control
-
-
-Independent steps allow multiple data scientists to work on the same pipeline at the same time without over-taxing compute resources. Separate steps also make it easy to use different compute types/sizes for each step.
-
-After the pipeline is designed, there is often more fine-tuning around the training loop of the pipeline. When you rerun a pipeline, the run jumps to the steps that need to be rerun, such as an updated training script. Steps that do not need to be rerun are skipped.
-
-With pipelines, you may choose to use different hardware for different tasks. Azure coordinates the various compute targets you use, so your intermediate data seamlessly flows to downstream compute targets.
 
 
 ## What is Azure Machine Learning component? 
@@ -51,14 +36,14 @@ Refer to [component spec definition](https://github.com/Azure/DesignerPrivatePre
 
 ### What's the benefit of component? 
 
-Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component adds following benefits:
-
-
--  **Reusable:** Component can be easily reused across different ML pipelines, different ML workspaces, even different organizations.  
-- **Reproducible:** By capturing all information in component specification, AML Component can be easily reproduced in different environment. 
--  **Easy development & debug:** Rich SDK and CLI features to make development and debug component much easier. See [component development overview](./component-development-overview.md) to learn more.   
-- **Easy management:**  Rich features both in CLI and UI to manage your components.  
-- **Componentizable:** This is the native benefit of component. It hides the complicated logic, and only exposes simple interface. So component consumer don't need to worry about implement. They can easily use components build by others. In the meanwhile the ground truth (component specification) of a component is visible, making secondary development easy. 
+Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component greatly simplifies the ML pipeline develpoment lifecycle, enables reproducibility and accelerates the collaboration for all-skill data scientists in a team:
+ 
+- **Composability:** This is the native benefit of component. It hides the complicated logic, and only exposes simple interface. So component consumers don't need to worry about underlying implementation. They can easily use components built by themselves or by others. In the meanwhile the ground truth (component specification) of a component is visible, making secondary development easy. 
+- **Reusability:** Component can be easily reused across different ML pipelines, different ML workspaces, even different organizations.
+- **Easy development, testing & debug:** Rich SDK and CLI features to make component development, testing and debug much easier. See [component development overview](./component-development-overview.md) to learn more.
+- **Easy pipeline authoring:** Once a component is registered in the workspace, it can be easily consumed in both Python Python SDK and drag-and-drop Designer UI.
+- **Reproducibility:** By capturing all information in component specification, AML Component can be easily reproduced in different environments. Components can be managed in versions so it's easy to trace back if a data scientist wants to reproduce a specific experiment result.
+- **Sharing & collaboration:** Data scientists who prefer low-code/no-code can use Designer UI to quickly prototype and export the pipeline to Python code for code-first data scientists for further tuning or check in. The exported Python notebook can also be submitted to different workspaces for sharing & collaboration.
 
 [video-show-component-value-prop]() (to-do)
 
