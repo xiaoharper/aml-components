@@ -1,19 +1,10 @@
-# Azure Machine learning pipeline and component overview
+# Azure Machine Learning pipeline and component overview
 
 
 
 ## What is Azure Machine Learning pipeline? 
 
-An Azure Machine Learning pipeline is an independently executable workflow of a complete machine learning task. Azure Machine Learning pipelines help you build, optimize, and manage machine learning workflows with following benefits:
-
-- Simplicity
-- Speed
-- Repeatability
-- Flexibility
-- Versioning and tracking
-- Modularity
-- Quality assurance
-- Cost control
+An Azure Machine Learning pipeline is an independently executable workflow of a complete machine learning task. Azure Machine Learning pipelines help you build, optimize, and manage machine learning workflows with simplicity, repeatability and quality assurance.
 
 These benefits become significant as soon as your machine learning project moves beyond pure exploration and into iteration. Even simple one-step pipelines can be valuable. Machine learning projects are often in a complex state, and it can be a relief to make the precise accomplishment of a single workflow a trivial process.
 
@@ -34,7 +25,7 @@ A component specification in YAML format describes the component in the Azure Ma
 
 Refer to [component spec definition](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azureml-modules/docs/module-spec-definition.md) for more details. 
 
-### What's the benefit of component? 
+## What's the benefit of component? 
 
 Currently Azure Machine Learning offers PipelineStep as the basic building block of machine learning pipeline. PipelineStep is one-off wrap of code that cannot be reused across different pipelines. Compare to PipelineStep, component greatly simplifies the ML pipeline develpoment lifecycle, enables reproducibility and accelerates the collaboration for all-skill data scientists in a team:
  
@@ -45,7 +36,6 @@ Currently Azure Machine Learning offers PipelineStep as the basic building block
 - **Reproducibility:** By capturing all information in component specification, AML Component can be easily reproduced in different environments. Components can be managed in versions so it's easy to trace back if a data scientist wants to reproduce a specific experiment result.
 - **Sharing & collaboration:** Data scientists who prefer low-code/no-code can use Designer UI to quickly prototype and export the pipeline to Python code for code-first data scientists for further tuning or check in. The exported Python notebook can also be submitted to different workspaces for sharing & collaboration.
 
-[video-show-component-value-prop]() (to-do)
 
 ## Next steps
 
@@ -53,11 +43,11 @@ Currently Azure Machine Learning offers PipelineStep as the basic building block
 
 [Component gallery](https://github.com/tichx/azureml-pipeline-components-gallery) is an open community for data scientists to contribute, share, and find machine learning pipelines as well as custom-built components to be used in Azure Machine Learning. It has more that 50 components for common machine learning tasks. Source code of all components can be found in the gallery. 
 
-Follow [this toturial](./tutorial-use-existing-component-to-build-pipeline.ipynb) (to-do) to learn how to consume a component from the gallery. 
+Follow [this toturial](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/sdkpreview/azureml-modules/samples/get-started.ipynb)  to learn how to consume an existing component. 
 
 
 ### Build your custom component
 
 
-- Read the [component development overview](./component-development-overview.md)
-- Follow the [tutorial to create your first component](tutorial-create-first-component.ipynb)  
+  - Read the [component development overview](./component-development-overview.md) to get an overview of features to accelerate component development. 
+- Follow the [tutorial to create your first component](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/sdkpreview/azureml-modules/samples/create-module-from-existing-python-code.ipynb) 
